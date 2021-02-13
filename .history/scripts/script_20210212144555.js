@@ -6,12 +6,9 @@ window.addEventListener('DOMContentLoaded', () => {
   myFetch.then(response => response.json())
     .then(function(data) {
       localStorage.setItem("product-list", JSON.stringify(data));
-      for(i=0;i<data.length;i++){
-        let productItem = document.createElement('product-item');
-        productItem.imgSrc = data[i].image;
-        productItem.titleSrc = data[i].title;
-        productItem.priceSrc = data[i].price;
+      for(i=0;i<data.length;i++)
+        let productItem = document.createElement('product');
+        productItem.imgSrc - data[i].image;
         list.appendChild(productItem);
-      }
     })
 });

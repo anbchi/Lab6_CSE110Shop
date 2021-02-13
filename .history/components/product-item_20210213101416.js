@@ -16,16 +16,16 @@ class ProductItem extends HTMLElement {
     let price = document.createElement('p');
     price.setAttribute('class', 'price');
     li.appendChild(price);
+    
+    //shadowRoot.innerHTML = `<button onclick="alert('Added to Cart!')">Add to Cart</button>`;
+    //var submit = this.appendChild( document.createElement( 'button' ) );
+    //this.onclick = () => submit.click();
 
-
-    let button = document.createElement('button');
-    button.innerHTML = "Add to Cart";
-    button.onclick = () => {
-      alert("Added to Cart!");
+    let a = document.getElementByTagName("BUTTON").onclick = () => {
       var counts = document.getElementById('cart-count').innerHTML;
-      document.getElementById('cart-count').innerHTML = (Number(counts) + 1);
-    }
-    li.appendChild(button);
+      document.getElementById('cart-count').innerHTML = ((Number)counts + 1);
+    };
+    li.appendChild(a);
 
     let style = document.createElement('style');
 
