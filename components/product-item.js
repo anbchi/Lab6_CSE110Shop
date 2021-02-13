@@ -19,12 +19,36 @@ class ProductItem extends HTMLElement {
 
 
     let button = document.createElement('button');
+    let count = 0;
     button.innerHTML = "Add to Cart";
     button.onclick = () => {
       alert("Added to Cart!");
       var counts = document.getElementById('cart-count').innerHTML;
       document.getElementById('cart-count').innerHTML = (Number(counts) + 1);
+      count = 1;
     }
+    button.addEventListener("click", function() {
+      if (count === 0)
+      {
+        button.innerHTML = "Add to Cart";
+        button.onclick = () => {
+          alert("Added to Cart!");
+          var counts = document.getElementById('cart-count').innerHTML;
+          document.getElementById('cart-count').innerHTML = (Number(counts) + 1);
+          count = 1;
+        }
+      }
+      else
+      {
+        button.innerHTML = "Remove to Cart";
+        button.onclick = () => {
+          alert("Removed from Cart!");
+          var counts = document.getElementById('cart-count').innerHTML;
+          document.getElementById('cart-count').innerHTML = (Number(counts) - 1);
+          count = 0;
+        }
+      }
+    })
     li.appendChild(button);
 
     let style = document.createElement('style');
