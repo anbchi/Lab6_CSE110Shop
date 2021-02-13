@@ -10,23 +10,9 @@ class ProductItem extends HTMLElement {
     li.setAttribute('class', 'product');
     let img = document.createElement('img');
     li.appendChild(img);
-    let title = document.createElement('p');
-    title.setAttribute('class', 'title');
+    let title = document.createElement('title');
     li.appendChild(title);
-    let price = document.createElement('p');
-    price.setAttribute('class', 'price');
-    li.appendChild(price);
-
-
-    let button = document.createElement('button');
-    button.innerHTML = "Add to Cart";
-    button.onclick = () => {
-      alert("Added to Cart!");
-      var counts = document.getElementById('cart-count').innerHTML;
-      document.getElementById('cart-count').innerHTML = (Number(counts) + 1);
-    }
-    li.appendChild(button);
-
+    
     let style = document.createElement('style');
 
     style.textContent = `
@@ -105,11 +91,11 @@ class ProductItem extends HTMLElement {
   }
 
   set titleSrc(title){
-    this.shadowRoot.querySelector('.title').innerHTML = title;
+    this.shadowRoot.querySelector('.title').src = title;
   }
 
   set priceSrc(price){
-    this.shadowRoot.querySelector('.price').innerHTML = price;
+    this.shadowRoot.querySelector('.price').src = price;
   }
 
 }

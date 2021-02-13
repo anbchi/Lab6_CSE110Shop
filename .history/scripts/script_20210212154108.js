@@ -10,7 +10,6 @@ window.addEventListener('DOMContentLoaded', () => {
         let productItem = document.createElement('product-item');
         productItem.imgSrc = data[i].image;
         productItem.titleSrc = data[i].title;
-        productItem.priceSrc = data[i].price;
         list.appendChild(productItem);
       }
     })

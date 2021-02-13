@@ -16,17 +16,7 @@ class ProductItem extends HTMLElement {
     let price = document.createElement('p');
     price.setAttribute('class', 'price');
     li.appendChild(price);
-
-
-    let button = document.createElement('button');
-    button.innerHTML = "Add to Cart";
-    button.onclick = () => {
-      alert("Added to Cart!");
-      var counts = document.getElementById('cart-count').innerHTML;
-      document.getElementById('cart-count').innerHTML = (Number(counts) + 1);
-    }
-    li.appendChild(button);
-
+    
     let style = document.createElement('style');
 
     style.textContent = `

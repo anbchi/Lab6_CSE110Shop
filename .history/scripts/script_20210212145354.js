@@ -7,10 +7,8 @@ window.addEventListener('DOMContentLoaded', () => {
     .then(function(data) {
       localStorage.setItem("product-list", JSON.stringify(data));
       for(i=0;i<data.length;i++){
-        let productItem = document.createElement('product-item');
+        let productItem = document.createElement('product');
         productItem.imgSrc = data[i].image;
-        productItem.titleSrc = data[i].title;
-        productItem.priceSrc = data[i].price;
         list.appendChild(productItem);
       }
     })
